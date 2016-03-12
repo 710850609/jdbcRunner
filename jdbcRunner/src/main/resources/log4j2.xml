@@ -1,13 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>  
+<?xml version="1.0" encoding="UTF-8"?>  
 <!-- status=debug 可以查看log4j的装配过程 -->  
 <configuration status="warn" monitorInterval="5">  
 	<properties>  
-		<!-- 根据配置环境变量ZFB_HOME确定日志路径 -->
-		<!-- <property name="LOG_HOME">$${env:ZFB_HOME}/logs</property>  -->
 		<property name="LOG_HOME">D:/logs</property>
 		<!-- 日志备份目录 -->  
 		<property name="BACKUP_HOME">{LOG_HOME}/backup</property>
-		<property name="SERVER_NAME">jdbc</property>  
+		<property name="SERVER_NAME">jdbcRunner</property>  
 	</properties>  
 	<appenders>  
 		<!-- 定义控制台输出 -->  
@@ -30,14 +28,11 @@
 		<!-- 控制SQL输出，info级别会输出 -->
 		<logger name="com.smart.jdbc.SqlLogger" level="info"/>
 		<!-- jdbc执行情况，trace级别会输出 -->
-		<logger name="com.smart.jdbc.JdbcManager" level="info" />
-		<logger name="com.smart.jdbc.Transaction" level="info" />
-		<logger name="com.smart.jdbc.JdbcRunner" level="info" />
-		<logger name="com.smart.util.JdbcUtil" level="warn" />
+		<logger name="org.linbo.framework.jdbc.JdbcManager" level="info" />
+		<logger name="org.linbo.framework.jdbc.Transaction" level="info" />
+		<logger name="org.linbo.framework.jdbc.JdbcRunner" level="info" />
+		<logger name="org.linbo.framework.util.JdbcUtil" level="warn" />
 		
-		<logger name="com.smart.biz" level="debug" />
-		<logger name="com.smart.service" level="info" />
-		<logger name="com.smart.web" level="info" />
 		<!-- Root Logger -->  
 		<root level="DEBUG">  
 			<!-- <appender-ref ref="DevLog" /> -->  
